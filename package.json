@@ -1,15 +1,18 @@
 {
-  "name": "app-store-scraper",
-  "version": "0.18.0",
+  "name": "app-store-scraper-evol",
+  "version": "0.20.0",
   "description": "scrape data from the itunes app store",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "mocha --timeout 8000",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit",
+    "test-types": "tsc --noEmit && node test-typescript-usage.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/facundoolano/app-store-scraper.git"
+    "url": "git+https://github.com/guiguito/app-store-scraper-evol.git"
   },
   "keywords": [
     "mac",
@@ -18,29 +21,40 @@
     "itunes",
     "scraper"
   ],
-  "author": "Facundo Olano",
+  "author": "Guilhem Duche",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/facundoolano/app-store-scraper/issues"
+    "url": "https://github.com/facundoolano/app-store-scraper-evol/issues"
   },
-  "homepage": "https://github.com/facundoolano/app-store-scraper#readme",
+  "homepage": "https://github.com/facundoolano/app-store-scraper-evol#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "debug": "^2.2.0",
-    "memoizee": "^0.4.15",
-    "ramda": "^0.29.0",
-    "request": "^2.87.0",
-    "throttled-request": "^0.1.1",
+    "axios": "^1.7.7",
+    "axios-rate-limit": "^1.4.0",
+    "cheerio": "^1.1.2",
+    "cors": "^2.8.5",
+    "debug": "^4.4.1",
+    "express": "^5.1.0",
+    "memoizee": "^0.4.17",
+    "ramda": "^0.31.3",
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "chai": "^4.3.8",
-    "eslint": "^8.49.0",
-    "eslint-config-semistandard": "^6.0.1",
-    "eslint-config-standard": "^5.1.0",
-    "eslint-plugin-promise": "^1.1.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "mocha": "^10.2.0",
-    "validator": "^13.11.0"
-  }
+    "@types/node": "^22.10.1",
+    "chai": "^4.5.0",
+    "eslint": "^8.57.1",
+    "eslint-config-semistandard": "^17.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-promise": "^6.6.0",
+    "eslint-plugin-standard": "^4.1.0",
+    "mocha": "^10.8.2",
+    "typescript": "^5.7.2",
+    "validator": "^13.15.15"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "lib/",
+    "types/",
+    "README.md"
+  ]
 }
